@@ -1,0 +1,29 @@
+<h1>Restaurant on Rails</h1>
+
+
+<%= form_for :menuitem, url: menuitems_path do |f| %>
+ <p>
+   <%= f.label :name %><br>
+   <%= f.text_field :name %>
+ </p>
+
+ <p>
+   <%= f.label :description %><br>
+   <%= f.text_area :description %>
+ </p>
+
+<p>
+  <%= f.label :ready %><br>
+  <%= f.check_box :ready %>
+</p>
+
+<p>
+  <%= f.label :served %><br>
+  <%= f.check_box :served %>
+</p>
+
+<p>
+  <%= f.submit "Save" %>
+</p>
+
+<% end %>
