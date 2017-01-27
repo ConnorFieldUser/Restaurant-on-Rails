@@ -1,0 +1,21 @@
+<h1>Full Menu</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Ready</th>
+    <th>Served</th>
+  </tr>
+
+<% @menuitems.each do |menuitem| %>
+  <hr><tr>
+    <td><%= menuitem.name %></td>
+    <td><%= menuitem.description %></td>
+    <td><%= menuitem.ready %></td>
+    <td><%= menuitem.served %></td>
+  </tr>
+  <hr>
+</table>
+
+<% end %>

@@ -1,5 +1,10 @@
 class MenuitemsController < ApplicationController
 
+
+  def index
+    @menuitems = Menuitem.all
+  end
+
   def show
     @menuitem = Menuitem.find(params[:id])
   end
