@@ -3,7 +3,7 @@ class MenuitemsController < ApplicationController
   end
 
   def create
-    render plain: params [:menuitem].inspect
+    render plain: params[:menuitem].inspect
   end
 
 end
