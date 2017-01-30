@@ -4,16 +4,15 @@
   <tr>
     <th>Name</th>
     <th>Description</th>
-    <th>Ready</th>
-    <th>Served</th>
+    <th>Price</th>
   </tr>
 
 <% @menuitems.each do |menuitem| %>
   <hr><tr>
     <td><%= menuitem.name %></td>
     <td><%= menuitem.description %></td>
-    <td><%= menuitem.ready %></td>
-    <td><%= menuitem.served %></td>
+    <td><%= menuitem.price %></td>
+
   </tr>
   <hr>
 </table>
