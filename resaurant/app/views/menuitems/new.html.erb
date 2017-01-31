@@ -2,24 +2,35 @@
 
 
 <%= form_for :menuitem, url: menuitems_path do |f| %>
+
+  <% if @menuitem.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@menuitem.errors.count, "error") %>
+prohibited
+        this article from being saved:
+      </h2>
+      <ul>
+        <% @menuitem.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+    <% end %>
+
  <p>
    <%= f.label :name %><br>
-   <%= f.text_field :name %>
+   <%= f.text_field :name, :required => true %>
  </p>
 
  <p>
    <%= f.label :description %><br>
-   <%= f.text_area :description %>
+   <%= f.text_area :description, :required => true%>
  </p>
 
 <p>
-  <%= f.label :ready %><br>
-  <%= f.check_box :ready %>
-</p>
-
-<p>
-  <%= f.label :served %><br>
-  <%= f.check_box :served %>
+  <%= f.label :price %><br>
+  <%= f.number_field :price, :required => true %>
 </p>
 
 <p>
@@ -27,3 +38,5 @@
 </p>
 
 <% end %>
+
+<%= link_to 'Back', menuitems_path %>

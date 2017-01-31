@@ -10,14 +10,17 @@ class MenuitemsController < ApplicationController
   end
 
   def new
+    @menuitem = Menuitem.new
   end
 
   def create
     @menuitem = Menuitem.new(menuitem_params)
 
-    @menuitem.save
-    redirect_to @menuitem
-
+    if @menuitem.save
+      redirect_to @menuitem
+    else
+      render 'new'
+    end
   end
 
   private
