@@ -13,6 +13,10 @@ class MenuitemsController < ApplicationController
     @menuitem = Menuitem.new
   end
 
+  def edit
+    @menuitem = Menuitem.find(params[:id])
+  end
+
   def create
     @menuitem = Menuitem.new(menuitem_params)
 
@@ -21,6 +25,23 @@ class MenuitemsController < ApplicationController
     else
       render 'new'
     end
+  end
+
+  def update
+    @menuitem = Menuitem.find(params[:id])
+
+    if @menuitem.update(menuitem_params)
+      redirect_to @menuitem
+    else
+      render 'edit'
+    end
+  end
+
+  def destroy
+    @menuitem = Menuitem.find(params[id])
+    @menuitem.destroy
+
+    redirect_to menuitems_path
   end
 
   private
