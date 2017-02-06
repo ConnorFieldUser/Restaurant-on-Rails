@@ -17,6 +17,9 @@
     <td><%= menuitem.price %></td>
     <td><%= link_to 'Show', menuitem_path(menuitem) %></td>
     <td><%= link_to 'Edit', edit_menuitem_path(menuitem) %></td>
+    <td><%= link_to 'Destroy', menuitem_path(menuitem),
+            method: :delete,
+            data: { confirm: 'Are you sure?'} %></td>
     </tr>
     <% end %>
 </table>

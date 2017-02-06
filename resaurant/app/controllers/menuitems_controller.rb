@@ -38,7 +38,7 @@ class MenuitemsController < ApplicationController
   end
 
   def destroy
-    @menuitem = Menuitem.find(params[id])
+    @menuitem = Menuitem.find(params[:id])
     @menuitem.destroy
 
     redirect_to menuitems_path
